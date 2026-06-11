@@ -68,7 +68,7 @@ int stream_mgr_load(stream_mgr_t *mgr, const char *pcap_path)
         uint32_t want = rec.incl_len < sizeof(hdr) ? rec.incl_len : sizeof(hdr);
         if (pcap_read_at(&mgr->pcap, rec.data_off, hdr, want) != want) break;
 
-        stream_desc_t d;
+        stream_desc_t d = {0};
         if (classify_packet(hdr, want, &d) != 0) continue;
 
         int idx = find_stream(mgr, &d);
@@ -110,7 +110,7 @@ int stream_mgr_load(stream_mgr_t *mgr, const char *pcap_path)
         uint32_t want = rec.incl_len < sizeof(hdr) ? rec.incl_len : sizeof(hdr);
         if (pcap_read_at(&mgr->pcap, rec.data_off, hdr, want) != want) break;
 
-        stream_desc_t d;
+        stream_desc_t d = {0};
         if (classify_packet(hdr, want, &d) != 0) continue;
         int idx = find_stream(mgr, &d);
         if (idx < 0) continue;
