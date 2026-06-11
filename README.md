@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> **このリポジトリはモノレポ [multicast_replayer_zero_pi](https://github.com/u44e/multicast_replayer_zero_pi) に統合され、アーカイブされました (2026-06-11)。**
+> P4コンソール版は `apps/p4_console` に移植済み (mcreplay API)。今後の開発・修正は統合先で行います。
+
 # Multicast Replayer for ESP32-P4 (有線Ethernet)
 
 ESP32-P4 + RMII PHY (100Mbps Ethernet) 向けのマルチキャストUDPストリーム
